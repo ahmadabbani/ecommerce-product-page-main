@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- displays site properly based on user's device -->
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>Frontend Mentor | E-commerce product page</title>
+    <link rel="stylesheet" href="style.css" />
+    <!--fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="overlay"></div>
+    <header>
+      <div class="container pt-3 mb-5 custom-container">
+        <div class="row mb-0">
+          <div class="col">
+            <div class="header-content">
+              <div class="logo-and-nav">
+                <div id="menu-icon" class="d-block d-md-none" onclick="toggleMenu()">
+                  <img src="images/icon-menu.svg" alt="Menu icon">
+                </div>
+                <div class="logo">
+                  <a href="#">
+                    <img id="logo" src="images/logo.svg" alt="Logo">
+                  </a>
+                </div>
+                <nav>
+                  <ul class="d-none d-md-flex" id="list">
+                    <li>
+                      <a href="#">Collections</a>
+                    </li>
+                    <li>
+                      <a href="#">Men</a>
+                    </li>
+                    <li>
+                      <a href="#">Women</a>
+                    </li>
+                    <li>
+                      <a href="#">About</a>
+                    </li>
+                    <li>
+                      <a href="#">Contact</a>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+              <div class="basket-and-user">
+                <img id="header-basket" src="images/icon-cart.svg" alt="Logo" onclick="togglecart()">
+                <span id="notification"></span>
+                <div class="choppingcart" id="cart">
+                  <div class="chc-title">
+                    <h1>Cart</h1>
+                    <div id="subtotal"></div>
+                  </div>
+                  <hr>
+                  <p id="cartemptymsg"></p>
+                  <div class="cart-items"></div>
+                  <button id="checkoutbtn">Checkout</button>
+                </div>
+                <img id="avatar" src="images/image-avatar.png" alt="Logo">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <hr>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="container  custom-container-padding">
+        <div class="row">
+          <div class="col-md-6">
+            <div id="carouselExampleIndicators" class="carousel slide">
+              <div class="carousel-indicators d-none d-md-flex">
+                <img src="images/image-product-1-thumbnail.jpg" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1">
+                <img src="images/image-product-2-thumbnail.jpg" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2">
+                <img src="images/image-product-3-thumbnail.jpg" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3">
+                <img src="images/image-product-4-thumbnail.jpg" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4">
+              </div>
+              <div class="carousel-inner">
+                <div class="carousel-item active ">
+                  <img src="images/image-product-1.jpg" class="d-block w-100 modal-toggle-btn" data-bs-toggle="modal" data-bs-target="#exampleModal" alt="...">
+                </div>
+                <div class="carousel-item ">
+                  <img src="images/image-product-2.jpg" class="d-block w-100 modal-toggle-btn" data-bs-toggle="modal" data-bs-target="#exampleModal" alt="...">
+                </div>
+                <div class="carousel-item">
+                  <img src="images/image-product-3.jpg" class="d-block w-100 modal-toggle-btn" data-bs-toggle="modal" data-bs-target="#exampleModal" alt="...">
+                </div>
+                <div class="carousel-item ">
+                  <img src="images/image-product-4.jpg" class="d-block w-100 modal-toggle-btn" data-bs-toggle="modal" data-bs-target="#exampleModal" alt="...">
+                </div>
+              </div>
+              <button class="carousel-control-prev d-block d-md-none" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                <span class="span-controls">
+                  <img src="images/icon-previous.svg" class="carousel-control-prev-icon" aria-hidden="true">
+                </span>
+              </button>
+              <button class="carousel-control-next d-block d-md-none" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                <span class="span-controls">
+                  <img src="images/icon-next.svg" class="carousel-control-next-icon" aria-hidden="true">
+                </span>
+              </button>
+            </div>
+          </div>
+          <div class="col-md-6 custom-padding-col">
+            <h3 id="heading3">Sneaker Company</h3>
+            <h1 id="heading1">Fall Limited Edition <br> Sneakers </h1>
+            <p id="paragraph"> These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they’ll withstand everything the weather can offer.</p>
+            <div class="price">
+              <div class="new-price">
+                <h2 id="price">$125.00</h2>
+                <span>50%</span>
+              </div>
+              <div class="old-price">
+                <h4 id="heading4">$250.00</h4>
+              </div>
+            </div>
+            <!--counter-->
+            <section class="purchase">
+              <div class="counter">
+                <button id="decrement-btn">
+                  <img src="images/icon-minus.svg">
+                </button>
+                <div id="counter-value">0</div>
+                <button id="increment-btn">
+                  <img src="images/icon-plus.svg">
+                </button>
+                <span id="error-message"></span>
+              </div>
+              <div class="add-to-cart">
+                <button id="addtocart-btn" onclick="addToCart()">
+                  <img id="basket" src="images/icon-cart.svg" alt="Logo">
+                  <span>Add to cart</span>
+                </button>
+              </div>
+              <!--counter end-->
+            </section>
+          </div>
+          <!-- Modal -->
+          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <img src="images/icon-close.svg" class="closeimg" data-bs-dismiss="modal" aria-label="Close">
+                <div class="modal-body">
+                  <!--carousel--->
+                  <div id="modal-carousel" class="carousel slide">
+                    <div class="carousel-indicators">
+                      <img src="images/image-product-1-thumbnail.jpg" data-bs-target="#modal-carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1">
+                      <img src="images/image-product-2-thumbnail.jpg" data-bs-target="#modal-carousel" data-bs-slide-to="1" aria-label="Slide 2">
+                      <img src="images/image-product-3-thumbnail.jpg" data-bs-target="#modal-carousel" data-bs-slide-to="2" aria-label="Slide 3">
+                      <img src="images/image-product-4-thumbnail.jpg" data-bs-target="#modal-carousel" data-bs-slide-to="3" aria-label="Slide 4">
+                    </div>
+                    <div class="carousel-inner">
+                      <div class="carousel-item active">
+                        <img src="images/image-product-1.jpg" class="d-block w-100" alt="...">
+                      </div>
+                      <div class="carousel-item">
+                        <img src="images/image-product-2.jpg" class="d-block w-100" alt="...">
+                      </div>
+                      <div class="carousel-item">
+                        <img src="images/image-product-3.jpg" class="d-block w-100" alt="...">
+                      </div>
+                      <div class="carousel-item">
+                        <img src="images/image-product-4.jpg" class="d-block w-100" alt="...">
+                      </div>
+                    </div>
+                    <button class="modal-carousel-control-prev" type="button" data-bs-target="#modal-carousel" data-bs-slide="prev">
+                      <span class="span-controls">
+                        <img src="images/icon-previous.svg" class="carousel-control-prev-icon" aria-hidden="true">
+                      </span>
+                    </button>
+                    <button class="modal-carousel-control-next" type="button" data-bs-target="#modal-carousel" data-bs-slide="next">
+                      <span class="span-controls">
+                        <img src="images/icon-next.svg" class="carousel-control-next-icon" aria-hidden="true">
+                      </span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--modal end-->
+        </div>
+      </div>
+    </main>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
